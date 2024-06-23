@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bxypujurjimiv"
+path="res://.godot/imported/random.glsl-7eeb95f8e8990e1fbbf0d83651e122a5.res"
+
+[deps]
+
+source_file="res://resources/shaders/compute/random.glsl"
+dest_files=["res://.godot/imported/random.glsl-7eeb95f8e8990e1fbbf0d83651e122a5.res"]
+
+[params]
+

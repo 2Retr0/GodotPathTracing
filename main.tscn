@@ -1,0 +1,297 @@
+[gd_scene load_steps=22 format=3 uid="uid://ce6cnha204m8r"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_anx0q"]
+[ext_resource type="Script" path="res://util/camera.gd" id="3_sxpw2"]
+[ext_resource type="Shader" path="res://resources/shaders/spatial/main.gdshader" id="3_ykcss"]
+[ext_resource type="Script" path="res://util/shapes/sphere_path_traced.gd" id="5_ydupt"]
+[ext_resource type="Script" path="res://util/disney_bsdf.gd" id="6_faywm"]
+[ext_resource type="Script" path="res://util/shapes/tri_path_traced.gd" id="7_n1nh6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u844i"]
+load_path = "res://.godot/imported/skybox.png-ff6c1f22e2f20552b0af16f7234eb501.s3tc.ctex"
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gqmsd"]
+panorama = SubResource("CompressedTexture2D_u844i")
+
+[sub_resource type="Sky" id="Sky_whw60"]
+sky_material = SubResource("PanoramaSkyMaterial_gqmsd")
+
+[sub_resource type="Environment" id="Environment_l7e88"]
+sky = SubResource("Sky_whw60")
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_586s8"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_p7f57"]
+texture_rd_rid = RID(74753807002640396)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5byva"]
+render_priority = 0
+shader = ExtResource("3_ykcss")
+shader_parameter/frame = 6065
+shader_parameter/render_texture = SubResource("Texture2DRD_p7f57")
+
+[sub_resource type="Resource" id="Resource_vlvhl"]
+script = ExtResource("6_faywm")
+diffuse_color = Color(0.65098, 0.0509804, 0.0509804, 1)
+subsurface_scattering_strength = 0.15
+metallic_strength = 0.0
+roughness_strength = 1.0
+anisotropic_strength = 0.8
+clearcoat_gloss = 1.0
+clearcoat_strength = 0.0
+specular_transmission_strength = 0.0
+index_of_refraction = 1.5
+sheen_strength = 1.0
+sheen_tint_strength = 1.0
+light_strength = 0.0
+
+[sub_resource type="Resource" id="Resource_h4rja"]
+script = ExtResource("6_faywm")
+diffuse_color = Color(0.121569, 0.45098, 0.14902, 1)
+subsurface_scattering_strength = 0.15
+metallic_strength = 0.0
+roughness_strength = 1.0
+anisotropic_strength = 0.8
+clearcoat_gloss = 1.0
+clearcoat_strength = 0.0
+specular_transmission_strength = 0.0
+index_of_refraction = 1.5
+sheen_strength = 1.0
+sheen_tint_strength = 1.0
+light_strength = 0.0
+
+[sub_resource type="Resource" id="Resource_ttyti"]
+script = ExtResource("6_faywm")
+diffuse_color = Color(1, 0.980392, 0.941176, 1)
+subsurface_scattering_strength = 0.15
+metallic_strength = 0.0
+roughness_strength = 1.0
+anisotropic_strength = 0.8
+clearcoat_gloss = 1.0
+clearcoat_strength = 0.0
+specular_transmission_strength = 0.0
+index_of_refraction = 1.5
+sheen_strength = 1.0
+sheen_tint_strength = 1.0
+light_strength = 0.0
+
+[sub_resource type="Resource" id="Resource_lpyu4"]
+script = ExtResource("6_faywm")
+diffuse_color = Color(0.820896, 0.379463, 0.0800648, 1)
+subsurface_scattering_strength = 0.15
+metallic_strength = 0.0
+roughness_strength = 1.0
+anisotropic_strength = 0.8
+clearcoat_gloss = 1.0
+clearcoat_strength = 0.0
+specular_transmission_strength = 0.0
+index_of_refraction = 1.5
+sheen_strength = 1.0
+sheen_tint_strength = 1.0
+light_strength = 0.0
+
+[sub_resource type="Resource" id="Resource_igb4a"]
+script = ExtResource("6_faywm")
+diffuse_color = Color(1, 0.980392, 0.941176, 1)
+subsurface_scattering_strength = 0.15
+metallic_strength = 0.0
+roughness_strength = 0.0
+anisotropic_strength = 0.8
+clearcoat_gloss = 0.5
+clearcoat_strength = 0.2
+specular_transmission_strength = 1.0
+index_of_refraction = 1.5
+sheen_strength = 1.0
+sheen_tint_strength = 1.0
+light_strength = 0.0
+
+[sub_resource type="Resource" id="Resource_rg7hq"]
+script = ExtResource("6_faywm")
+diffuse_color = Color(1, 0.980392, 0.941176, 1)
+subsurface_scattering_strength = 0.15
+metallic_strength = 0.0
+roughness_strength = 0.0
+anisotropic_strength = 0.8
+clearcoat_gloss = 0.5
+clearcoat_strength = 0.2
+specular_transmission_strength = 1.0
+index_of_refraction = 0.667
+sheen_strength = 1.0
+sheen_tint_strength = 1.0
+light_strength = 0.0
+
+[sub_resource type="Resource" id="Resource_q56dr"]
+script = ExtResource("6_faywm")
+diffuse_color = Color(0, 0.614657, 0.887491, 1)
+subsurface_scattering_strength = 0.15
+metallic_strength = 0.85
+roughness_strength = 0.2
+anisotropic_strength = 1.0
+clearcoat_gloss = 0.6
+clearcoat_strength = 1.0
+specular_transmission_strength = 0.0
+index_of_refraction = 1.5
+sheen_strength = 1.0
+sheen_tint_strength = 1.0
+light_strength = 0.0
+
+[sub_resource type="Resource" id="Resource_1gncu"]
+script = ExtResource("6_faywm")
+diffuse_color = Color(1, 0.980392, 0.941176, 1)
+subsurface_scattering_strength = 0.15
+metallic_strength = 0.0
+roughness_strength = 1.0
+anisotropic_strength = 0.8
+clearcoat_gloss = 1.0
+clearcoat_strength = 0.0
+specular_transmission_strength = 0.0
+index_of_refraction = 1.5
+sheen_strength = 1.0
+sheen_tint_strength = 1.0
+light_strength = 15.0
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_anx0q")
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l7e88")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, 0.0449433, 0.254887, -8.60946e-08, -0.984808, 0.173648, 0.258819, -0.167731, -0.951251, 0, 0, 0)
+light_bake_mode = 0
+editor_only = true
+metadata/_edit_lock_ = true
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 6.5)
+script = ExtResource("3_sxpw2")
+metadata/_edit_lock_ = true
+
+[node name="Viewport" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_586s8")
+surface_material_override/0 = SubResource("ShaderMaterial_5byva")
+metadata/_edit_lock_ = true
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="RightWall0" type="Node3D" parent="Objects"]
+script = ExtResource("7_n1nh6")
+a = Vector3(2.5, 0, 2.5)
+b = Vector3(2.5, 5, 2.5)
+c = Vector3(2.5, 0, -2.5)
+material = SubResource("Resource_vlvhl")
+
+[node name="RightWall1" type="Node3D" parent="Objects"]
+script = ExtResource("7_n1nh6")
+a = Vector3(2.5, 5, 2.5)
+b = Vector3(2.5, 5, -2.5)
+c = Vector3(2.5, 0, -2.5)
+material = SubResource("Resource_vlvhl")
+
+[node name="LeftWall0" type="Node3D" parent="Objects"]
+script = ExtResource("7_n1nh6")
+a = Vector3(-2.5, 0, -2.5)
+b = Vector3(-2.5, 5, 2.5)
+c = Vector3(-2.5, 0, 2.5)
+material = SubResource("Resource_h4rja")
+
+[node name="LeftWall1" type="Node3D" parent="Objects"]
+script = ExtResource("7_n1nh6")
+a = Vector3(-2.5, 5, -2.5)
+b = Vector3(-2.5, 5, 2.5)
+c = Vector3(-2.5, 0, -2.5)
+material = SubResource("Resource_h4rja")
+
+[node name="Floor0" type="Node3D" parent="Objects"]
+script = ExtResource("7_n1nh6")
+a = Vector3(-2.5, 0, -2.5)
+b = Vector3(-2.5, 0, 2.5)
+c = Vector3(2.5, 0, -2.5)
+material = SubResource("Resource_ttyti")
+
+[node name="Floor1" type="Node3D" parent="Objects"]
+script = ExtResource("7_n1nh6")
+a = Vector3(2.5, 0, 2.5)
+b = Vector3(2.5, 0, -2.5)
+c = Vector3(-2.5, 0, 2.5)
+material = SubResource("Resource_ttyti")
+
+[node name="Ceiling0" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+script = ExtResource("7_n1nh6")
+a = Vector3(-2.5, 0, 2.5)
+b = Vector3(-2.5, 0, -2.5)
+c = Vector3(2.5, 0, -2.5)
+material = SubResource("Resource_ttyti")
+
+[node name="Ceiling1" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+script = ExtResource("7_n1nh6")
+a = Vector3(2.5, 0, -2.5)
+b = Vector3(2.5, 0, 2.5)
+c = Vector3(-2.5, 0, 2.5)
+material = SubResource("Resource_ttyti")
+
+[node name="BackWall0" type="Node3D" parent="Objects"]
+script = ExtResource("7_n1nh6")
+a = Vector3(2.5, 0, -2.5)
+b = Vector3(-2.5, 5, -2.5)
+c = Vector3(-2.5, 0, -2.5)
+material = SubResource("Resource_ttyti")
+
+[node name="BackWall1" type="Node3D" parent="Objects"]
+script = ExtResource("7_n1nh6")
+a = Vector3(2.5, 5, -2.5)
+b = Vector3(-2.5, 5, -2.5)
+c = Vector3(2.5, 0, -2.5)
+material = SubResource("Resource_ttyti")
+
+[node name="Sphere0" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("5_ydupt")
+radius = 0.5
+material = SubResource("Resource_lpyu4")
+
+[node name="Sphere1a" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.5, 0)
+script = ExtResource("5_ydupt")
+radius = 0.5
+material = SubResource("Resource_igb4a")
+
+[node name="Sphere1b" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.5, 0)
+script = ExtResource("5_ydupt")
+radius = 0.45
+material = SubResource("Resource_rg7hq")
+
+[node name="Sphere2" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.5, 0)
+script = ExtResource("5_ydupt")
+radius = 0.5
+material = SubResource("Resource_q56dr")
+
+[node name="Light0" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.999, 0)
+script = ExtResource("7_n1nh6")
+a = Vector3(-0.5, 0, 0.5)
+b = Vector3(-0.5, 0, -0.5)
+c = Vector3(0.5, 0, -0.5)
+material = SubResource("Resource_1gncu")
+
+[node name="Light1" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.999, 0)
+script = ExtResource("7_n1nh6")
+a = Vector3(0.5, 0, -0.5)
+b = Vector3(0.5, 0, 0.5)
+c = Vector3(-0.5, 0, 0.5)
+material = SubResource("Resource_1gncu")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="child_entered_tree" from="Objects" to="." method="_on_objects_child_entered_tree"]

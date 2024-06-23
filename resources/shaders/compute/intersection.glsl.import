@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://jx481xef5haa"
+path="res://.godot/imported/intersection.glsl-72c8bda991cbc1ea4ca2dfd46be2d90d.res"
+
+[deps]
+
+source_file="res://resources/shaders/compute/intersection.glsl"
+dest_files=["res://.godot/imported/intersection.glsl-72c8bda991cbc1ea4ca2dfd46be2d90d.res"]
+
+[params]
+
